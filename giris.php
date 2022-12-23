@@ -1,37 +1,44 @@
-<?php
+<?php 
 error_reporting(0);
+ob_start();
+session_start();
+include ("VT.php")
 
-include("baglan.php");
 ?>
-<!DOCTYPE html>
-<html lang="en">
+
+
+<html lang="tr">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="css/kullanicikayit.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+
+	<link href="https://fonts.googleapis.com/css?family=Sacramento|Sigmar+One|Ubuntu|ZCOOL+KuaiLe" rel="stylesheet">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="shortcut icon" href="basket-fill.svg">
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="basket-fill.svg">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<link rel="stylesheet" href="css/owl.carousel.css">
-		
-  <title>Document</title>
+	<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine1/style.css" />
+	<script type="text/javascript" src="engine1/jquery.js"></script>
+	<!-- End WOWSlider.com HEAD section -->
+
+
+
+
+
+	<title>Türkiyenin Tek Adresi</title>
 </head>
 
-<body style="background: linear-gradient(
-        to right,
-        #ff512f,
-        #f09819
-    );">
+<body>
 
-<div class="superNav border-bottom py-2 bg-light">
+	<div class="superNav border-bottom py-2 bg-light">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 centerOnMobile">
@@ -80,16 +87,16 @@ include("baglan.php");
 				</div>
 				<ul class="navbar-nav ms-auto ">
 					<li class="nav-item">
-						<a class="nav-link mx-2 text-uppercase " aria-current="page" href="index.php">Anasayfa</a>
+						<a class="nav-link mx-2 text-uppercase " aria-current="page" href="index.html">Anasayfa</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link mx-2 text-uppercase" href="elektronik.html">Elektronik</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link mx-2 text-uppercase " href="giyim.html">Giyim</a>
+						<a class="nav-link mx-2 text-uppercase" href="giyim.html">Giyim</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link mx-2 text-uppercase" href="ev.html">Ev</a>
+						<a class="nav-link mx-2 text-uppercase " href="ev.html">Ev</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link mx-2 text-uppercase" href="kitap,müzik.html">Kitap,Müzik </a>
@@ -101,127 +108,154 @@ include("baglan.php");
 							Sepet</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link mx-2 text-uppercase active" href="#"><i class="fa-solid fa-circle-user me-1"></i>
+						<a class="nav-link mx-2 text-uppercase active" href="giris.php"><i class="fa-solid fa-circle-user me-1"></i>
 							Giriş</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
+      
+	<br>
 
 
 
 
 
-
-
-
-
-
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-8 background">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-10 col-xl-9 mx-auto">
-              <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
-                <div class="card-img-left d-none d-md-flex">
-                  <!-- Background image for card set in CSS! -->
+ <!-- Sign In Start -->
+ <div class="container-fluid">
+            <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                    <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <a href="index.html" class="">
+                                <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>DarkPan</h3>
+                            </a>
+                            <h3>Sign In</h3>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInputEmail"  name="eMail" placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating mb-4">
+                            <input type="password" class="form-control" id="floatingPassword" name="sifre
+							"placeholder="Şifre">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div>
+                            <a href="">Forgot Password</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4" name="kayitol">Sign In</button>
+                        <p class="text-center mb-0">Don't have an Account? <a href="">Sign Up</a></p>
+                    </div>
                 </div>
-                <div class=" card-body p-4 p-sm-5">
-                  <h5 class="card-title text-center mb-5 fw-light fs-5">Kayıt Ol</h5>
-                  <form action="" method="POST">
-
-                    <div class="form-floating mb-3">
-                      <input type="text" class="form-control" id="floatingInputUsername" name="adSoyad" placeholder="Ad Soyad" required autofocus>
-                      <label for="floatingInputUsername">Ad Soyad</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                      <input type="email" class="form-control" id="floatingInputEmail" name="eMail" placeholder="isim@mail.com">
-                      <label for="floatingInputEmail">Email adresi</label>
-                    </div>
-
-                    <hr>
-                    <div class="form-floating mb-3">
-                      <input type="email" class="form-control" name="telefonNo" placeholder="5070555555">
-                      <label for="floatingInputEmail">Telefon Numarası</label>
-                    </div>
-
-                    <hr>
-
-                    <div class="form-floating mb-3">
-                      <input type="password" class="form-control" id="floatingPassword" name="sifre" placeholder="Şifre">
-                      <label for="floatingPassword">Şifre</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                      <input type="password" class="form-control" id="floatingPasswordConfirm" name="sifreTekrar" placeholder="Şifre Tekrar">
-                      <label for="floatingPasswordConfirm">Şifre Tekrar</label>
-                    </div>
-
-                    <div class="d-grid mb-2">
-                      <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit" name="kayitol">Kayıt Ol</button>
-                    </div>
-
-                    <a class="d-block text-center mt-2 small" href="anagiris.php">Hesabınız Varmı? Giriş Yap</a>
-
-                    <hr class="my-4">
-
-
-
-                  </form>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="col-md-2"></div>
-    </div>
-  </div>
+        <!-- Sign In End -->
 
 
-</body>
 
-
+    
+	 
 
 
 
 
 
-</html>
-<?php
-$adSoyad              = @$_POST["adSoyad"];
-$eMail                  = @$_POST["eMail"];
-$telefonNo              = @$_POST["telefonNo"];
-$sifre                  = @$_POST["sifre"];
-$sifreTekrar            = @$_POST["sifreTekrar"];
 
 
-$save = $db->prepare("INSERT INTO kullanicikayit SET 
-	adSoyad             =:adSoyad,
-	eMail		            =:eMail,
-	telefonNo			      =:telefonNo,
-	sifre		            =:sifre
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- JavaScript Libraries -->
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+
 	
-	");
-$insert = $save->execute(
-  array(
-    "adSoyad"   => $adSoyad,
-    "eMail"      => $eMail,
-    "telefonNo"  => $telefonNo,
-      "sifre"      => $sifre,
-
-  )
-);
 
 
-if ($insert) {
-  echo "Form Kaydedildi.";
-} else {
-  echo "Hata Var";
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+
+
+
+    <script src="kategoriler/popper.js"
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+		crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+	<!--Bootstrap Multi Slide Carousel Java Kodları-->
+	<script>let items = document.querySelectorAll('.carousel .carousel-item')
+
+		items.forEach((el) => {
+			const minPerSlide = 4
+			let next = el.nextElementSibling
+			for (var i = 1; i < minPerSlide; i++) {
+				if (!next) {
+					// wrap carousel by using first child
+					next = items[0]
+				}
+				let cloneChild = next.cloneNode(true)
+				el.appendChild(cloneChild.children[0])
+				next = next.nextElementSibling
+			}
+		})
+	</script>
+</body>
+<?php
+$eMail=@$_POST["eMail"];
+$sifre=@$_POST["sifre"];
+$user= $db->query("SELECT * FROM `giris` WHERE email='$eMail' AND sifre='$sifre'")->fetch();
+if ($user) {
+	$_SESSION['user']=$user;
+  header("location:index.php");
+}else {
+echo"Bilgiler Yanlış";
+
 }
 ?>
+</html>
